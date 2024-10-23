@@ -1,6 +1,8 @@
 # Anthropic Computer Use <> Browserbase Demo
 
-<img src="anthropic-browserbase.png" alt="Anthropic Computer Use <> Browserbase Demo" width="500">
+<div style="text-align: center;">
+  <img src="anthropic-browserbase.png" alt="Anthropic Computer Use <> Browserbase Demo"">
+</div>
 
 > [!CAUTION]
 > Computer use is a beta feature. Please be aware that computer use poses unique risks that are distinct from standard API features or chat interfaces. These risks are heightened when using computer use to interact with the internet. To minimize risks, consider taking precautions such as:
