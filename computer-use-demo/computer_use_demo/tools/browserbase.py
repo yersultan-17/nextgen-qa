@@ -1,7 +1,7 @@
 import requests
 import sys
 import json
-import os
+
 
 def create_session(project_id, api_key):
     url = "https://www.browserbase.com/v1/sessions"
@@ -34,8 +34,8 @@ def get_debug_url(session_id, api_key):
 def main():
     print("Starting browserbase.py script", file=sys.stderr)
 
-    project_id = os.environ["BROWSERBASE_PROJECT_ID"]
-    api_key = os.environ["BROWSERBASE_API_KEY"]
+    project_id = "your-project-id"
+    api_key = "your-api-key"
 
     session_id = create_session(project_id, api_key)
     if session_id:
