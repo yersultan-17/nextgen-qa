@@ -2,6 +2,10 @@ import requests
 import sys
 import json
 from playwright.sync_api import sync_playwright, Playwright
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 
 def create_session(project_id, api_key):
@@ -40,8 +44,8 @@ def connect_to_browserbase(playwright: Playwright, api_key, session_id):
 def main():
     print("Starting browserbase.py script", file=sys.stderr)
 
-    project_id = "<your-project-id>"
-    api_key = "<your-api-key>"
+    project_id = os.environ["BROWSERBASE_PROJECT_ID"]
+    api_key = os.environ["BROWSERBASE_API_KEY"]
 
     session_id = create_session(project_id, api_key)
     if session_id:
