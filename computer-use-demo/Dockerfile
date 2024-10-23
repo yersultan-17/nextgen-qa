@@ -104,14 +104,14 @@ ENV DISPLAY_NUM=$DISPLAY_NUM
 ENV HEIGHT=$HEIGHT
 ENV WIDTH=$WIDTH
 
-# make note here
+# This is the entrypoint script that starts all the services
 COPY --chown=$USERNAME:$USERNAME image/entrypoint.sh $HOME/entrypoint.sh
 RUN chmod +x $HOME/entrypoint.sh
 
-# make note here
+# This is the Browserbase script that connects to Browserbase and opens the debugger URL
 COPY --chown=$USERNAME:$USERNAME computer_use_demo/tools/browserbase.py $HOME/computer_use_demo/tools/
 
-# make note here
+# This is the script that opens the debugger URL
 COPY --chown=$USERNAME:$USERNAME image/open_debugger.sh $HOME/open_debugger.sh
 RUN chmod +x $HOME/open_debugger.sh
 
