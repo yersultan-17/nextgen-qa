@@ -3,3 +3,6 @@ anthropic[bedrock,vertex]>=0.37.1
 jsonschema==4.22.0
 boto3>=1.28.57
 google-auth<3,>=2
+requests==2.31.0
+playwright==1.48.0
+os==0.1.1

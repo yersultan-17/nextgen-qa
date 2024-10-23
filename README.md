@@ -56,3 +56,35 @@ We welcome contributions to the Anthropic Quickstarts repository! If you have id
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+
+
+
+
+
+
+==========
+
+<!-- notes in computer-use-demo/dockerfile -->
+<!-- don't use dev-requirements.txt, wrong version, use requirements.txt in computer_use_demo/ -->
+
+### Instructions for building the docker image:
+
+`cd computer-use-demo`
+
+Add your Browserbase API and Project ID to the `.env` file.
+
+`docker build -t my-computer-use-demo .`
+
+Run the container with your Anthropic API key:
+```bash
+docker run \
+    -e ANTHROPIC_API_KEY=<your-anthropic-api-key> \
+    -v $HOME/.anthropic:/home/computeruse/.anthropic \
+    -p 5900:5900 \
+    -p 8501:8501 \
+    -p 6080:6080 \
+    -p 8080:8080 \
+    -it my-computer-use-demo
+```

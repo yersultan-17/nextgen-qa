@@ -16,6 +16,8 @@ RUN apt-get update && \
     sudo \
     mutter \
     x11vnc \
+    # add w3m for debugging
+    w3m \
     # Python/pyenv reqs
     build-essential \
     libssl-dev  \
@@ -101,5 +103,16 @@ ARG WIDTH=1024
 ENV DISPLAY_NUM=$DISPLAY_NUM
 ENV HEIGHT=$HEIGHT
 ENV WIDTH=$WIDTH
+
+# make note here
+COPY --chown=$USERNAME:$USERNAME image/entrypoint.sh $HOME/entrypoint.sh
+RUN chmod +x $HOME/entrypoint.sh
+
+# make note here
+COPY --chown=$USERNAME:$USERNAME computer_use_demo/tools/browserbase.py $HOME/computer_use_demo/tools/
+
+# make note here
+COPY --chown=$USERNAME:$USERNAME image/open_debugger.sh $HOME/open_debugger.sh
+RUN chmod +x $HOME/open_debugger.sh
 
 ENTRYPOINT [ "./entrypoint.sh" ]
