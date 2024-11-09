@@ -40,4 +40,4 @@ def create_issue(summary, description):
         print(f"An error occurred: {e}")
 
 
-create_issue("Test Issue", "This is a test issue created via the Jira API.")
+# create_issue("Test Issue", "This is a test issue created via the Jira API.")
